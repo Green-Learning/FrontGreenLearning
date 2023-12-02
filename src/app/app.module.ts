@@ -5,12 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IndexComponent } from './components/layout/index/index.component';
 import { HeaderComponent } from './components/layout/header/header.component';
-import { SalaslistComponent } from './salas/salaslist/salaslist.component';
-import { SalasdetailsComponent } from './salas/salasdetails/salasdetails.component';
-import { AlunosdetailsComponent } from './alunos/alunosdetails/alunosdetails.component';
-import { AlunoslistComponent } from './alunos/alunoslist/alunoslist.component';
-import { LoginComponent } from './sistema/login/login.component';
-
+import { SalaslistComponent } from './components/salas/salaslist/salaslist.component';
+import { SalasdetailsComponent } from './components/salas/salasdetails/salasdetails.component';
+import { AlunosdetailsComponent } from './components/alunos/alunosdetails/alunosdetails.component';
+import { AlunoslistComponent } from './components/alunos/alunoslist/alunoslist.component';
+import { LoginComponent } from './components/sistema/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
