@@ -1,1 +1,56 @@
-<p>salaslist works!</p>
+<div class="container mt-4">
+
+  <div class="container mt-4">
+
+    <div class="row justify-content-between mb-3">
+      <div class="col-6">
+        <span class="fs-2 fw-medium" style="color: #6E6DE2;">Salas</span>
+      </div>
+      <div class="col-6 text-end">
+        <button type="button" class="btn btn-lg btn-outline-info fw-medium"
+          (click)="(modal1)">NOVO</button>
+      </div>
+    </div>
+    <table class="table table-bordered rounded">
+      <tbody class="fw-semibold">
+        <tr>
+          <td class="text-start align-middle">Sala A</td>
+          <td class="text-start align-middle" style="color: #6E6DE2;">13 alunos</td>
+          <td class="text-end align-middle">
+            <button type="button" class="btn btn-outline-warning me-2"
+              data-toggle="tooltip" title="Editar">
+              <i class="bi bi-eye-fill" style="color: #6E6DE2;"></i>
+            </button>
+            <button type="button" class="btn btn-outline-danger"
+              data-toggle="tooltip" title="Excluir"><i
+                class="bi bi-trash-fill" style="color: #6E6DE2;"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-start align-middle">Sala B</td>
+          <td class="text-start align-middle" style="color: #6E6DE2;">24 alunos</td>
+          <td class="text-end align-middle">
+            <button type="button" class="btn btn-outline-warning me-2"
+              data-toggle="tooltip" title="Editar">
+              <i class="bi bi-eye-fill" style="color: #6E6DE2;"></i>
+            </button>
+            <button type="button" class="btn btn-outline-danger"
+              data-toggle="tooltip" title="Excluir">
+              <i class="bi bi-trash-fill" style="color: #6E6DE2;"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #modal1 let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Nova Sala</h4>
+      <button type="button" class="btn-close" aria-label="Close"
+        (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <!-- <div class="modal-body">
+      <app-turmadetails [turma]="objetoSelecionadoParaEdicao" (retorno)="addOuEditar($event)"></app-turmadetails>
+  </div> -->
+  </ng-template>
