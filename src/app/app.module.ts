@@ -10,6 +10,9 @@ import { SalasdetailsComponent } from './components/salas/salasdetails/salasdeta
 import { AlunosdetailsComponent } from './components/alunos/alunosdetails/alunosdetails.component';
 import { AlunoslistComponent } from './components/alunos/alunoslist/alunoslist.component';
 import { LoginComponent } from './components/sistema/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +26,9 @@ import { LoginComponent } from './components/sistema/login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration()
