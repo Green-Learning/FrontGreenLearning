@@ -25,37 +25,27 @@ export class UserService {
 
   // save(user: User): Observable<User> {
   //   if (user.id !== undefined){
-  //     console.log(user.id + '  edit');
   //     return this.http.put<User>(this.API + '/editar/' + user.id, user);
   //   }
-  //   console.log('save');
 
   //   return this.http.post<User>(this.API, user);
   // }
 
 
 
-  // deslogar(): Observable<any> {
-  //   return this.http.get<any>(this.API + '/deslogar');
-  // }
-
-
-
-
-
   // Metodos do token
 
-  // addToken(token: string) {
-  //   localStorage.setItem('token', token);
-  // }
+  addToken(token: string) {
+    localStorage.setItem('token', token);
+  }
 
-  // removerToken() {
-  //   localStorage.removeItem('token');
-  // }
+  removerToken() {
+    localStorage.removeItem('token');
+  }
 
-  // getToken() {
-  //   return localStorage.getItem('token');
-  // }
+  getToken() {
+    return localStorage.getItem('token');
+  }
 
 
   // jwtDecode() {

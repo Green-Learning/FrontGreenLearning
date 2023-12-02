@@ -11,7 +11,8 @@ import { AlunosdetailsComponent } from './components/alunos/alunosdetails/alunos
 import { AlunoslistComponent } from './components/alunos/alunoslist/alunoslist.component';
 import { LoginComponent } from './components/sistema/login/login.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -36,3 +37,5 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+provideHttpClient(withFetch())

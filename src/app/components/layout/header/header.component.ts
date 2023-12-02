@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  loginService = inject(UserService);
+
+  constructor(private router: Router) {}
+
+  logout(): void {
+    this.loginService.removerToken()
+    this.router.navigate(['/login']);
+  }
 }

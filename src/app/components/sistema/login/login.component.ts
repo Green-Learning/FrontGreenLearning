@@ -16,26 +16,24 @@ export class LoginComponent {
   loginService = inject(UserService);
 
   constructor() {
-    // let token = localStorage.getItem('token');
-    // if (token) {
-    //   this.roteador.navigate(['/salas']);
-    // }
+    let token = localStorage.getItem('token');
+    if (token) {
+      this.roteador.navigate(['/salas']);
+    }
 
   }
 
   logar() {
-
-
+    
     this.loginService.login(this.login).subscribe({
       next: user => { // QUANDO DÁ CERTO
-        console.log(user);
-        // this.loginService.addToken(user.token);
+        this.loginService.addToken(user.token);
         this.roteador.navigate(['/salas']);
       },
       error: erro => { // QUANDO DÁ ERRO
-        console.log(this.login)
         this.showError = true
         console.error(erro);
+
       }
     });
 
