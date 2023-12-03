@@ -13,12 +13,14 @@ import { Aluno } from '../../../models/aluno';
 export class SalvarJogoComponent {
 
   @Input() desabilitaCampo!: boolean;
-
-  @Input() pontos: Pontos = new Pontos();
+  @Input() score!: number;
   @Input() aluno: Aluno = new Aluno();
+
   @Output() retorno = new EventEmitter<Pontos>();
 
-  @Input() score: number = 0;
+  pontos: Pontos = new Pontos();
+
+
 
   modalService = inject(NgbModal);
   modalRef!: NgbModalRef;

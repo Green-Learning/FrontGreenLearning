@@ -15,6 +15,7 @@ export class Fase1Component {
 
   lista: Pontos[] = [];
 
+
   objetoSelecionadoParaEdicao: Pontos = new Pontos();
   indiceSelecionadoParaEdicao!: number;
 
