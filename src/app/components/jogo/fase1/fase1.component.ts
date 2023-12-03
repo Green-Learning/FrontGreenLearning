@@ -1,6 +1,10 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, Output, ViewChild, inject } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDropList } from '@angular/cdk/drag-drop';
 import { Elementodearrastar } from '../../../models/jogo/elementodearrastar';
+import { JogoService } from '../../../services/jogo.service';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { Pontos } from '../../../models/jogo/pontos';
+import { EventEmitter } from 'stream';
 
 @Component({
   selector: 'app-fase1',
@@ -8,6 +12,41 @@ import { Elementodearrastar } from '../../../models/jogo/elementodearrastar';
   styleUrls: ['./fase1.component.scss']
 })
 export class Fase1Component {
+
+  lista: Pontos[] = [];
+
+  objetoSelecionadoParaEdicao: Pontos = new Pontos();
+  indiceSelecionadoParaEdicao!: number;
+
+  modalService = inject(NgbModal);
+  modalRef!: NgbModalRef;
+  jogoService = inject(JogoService);
+
+  listAll() {
+
+    this.jogoService.listAll().subscribe({
+      next: lista => { // QUANDO DÁ CERTO
+        this.lista = lista;
+      },
+      error: erro => { // QUANDO DÁ ERRO
+        alert('Exemplo de tratamento de erro/exception! Observe o erro no console!');
+        console.error(erro);
+      }
+    });
+
+  }
+
+  adicionar(modal: any){
+    this.modalRef = this.modalService.open(modal, {size: 'md'});
+  }
+
+  addOuEditarPontos(pontos: Pontos) {
+
+    this.listAll();
+
+    this.modalRef.dismiss();
+
+  }
 
   @ViewChild('fase1LixosContainer') fase1LixosContainer!: ElementRef;
   @ViewChild('fase2LixosContainer') fase2LixosContainer!: ElementRef;
@@ -53,8 +92,8 @@ export class Fase1Component {
     //papel
     this.fase1Lixos.push(new Elementodearrastar('assets/jogoimg/papel/cafe.png', 'papel'));
     this.fase1Lixos.push(new Elementodearrastar('assets/jogoimg/papel/sacola.png', 'papel'));
-  
-  
+    
+    
     //lixos fase 2
     //vidro
     this.fase2Lixos.push(new Elementodearrastar('assets/jogoimg/vidro/taca.png', 'vidro'));

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Aluno } from '../../../models/aluno';
 
 @Component({
   selector: 'app-alunoslist',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './alunoslist.component.scss'
 })
 export class AlunoslistComponent {
+
+  @Input() modoLancamento = false;
+  @Output() alunoRetorno = new EventEmitter<Aluno>();
+ 
 
 }

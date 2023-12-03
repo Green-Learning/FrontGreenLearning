@@ -16,6 +16,9 @@ import { Router } from '@angular/router';
 import { Fase1Component } from './components/jogo/fase1/fase1.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CdkDrag,CdkDropList,CdkDropListGroup} from '@angular/cdk/drag-drop';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SalvarJogoComponent } from './components/jogo/salvar-jogo/salvar-jogo.component';
+
 
 @NgModule({
   declarations: [
@@ -28,6 +31,7 @@ import { CdkDrag,CdkDropList,CdkDropListGroup} from '@angular/cdk/drag-drop';
     AlunoslistComponent,
     LoginComponent,
     Fase1Component,
+    SalvarJogoComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,8 @@ import { CdkDrag,CdkDropList,CdkDropListGroup} from '@angular/cdk/drag-drop';
     DragDropModule,
     CdkDropListGroup,
     CdkDropList,
-    CdkDrag
+    CdkDrag,
+    NgbModule
   ],
   providers: [
     provideClientHydration()

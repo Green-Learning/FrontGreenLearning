@@ -1,6 +1,6 @@
 <div class="container">
       <h3>Arraste os itens <b>Do LIXO</b> para suas Lixeiras:</h3><br>
-      <button (click)="avancaFase()">Avançar para a Próxima Fase</button>
+      <button (click)="avancaFase()" class="btn btn-success">Avançar para a Próxima Fase</button>
       <div cdkDropListGroup class="row col-lg-12">
 
         <!-- LIXOS FASE 1 -->
@@ -235,5 +235,20 @@
       <h3>{{mensagemColisao}} </h3>
       <h3 *ngIf="arrastando">Arrastando! </h3>
     
+      <button type="button" class="btn btn-primary" (click)="adicionar(modal1)">SALVAR</button>
+
     </div>
+
+    <ng-template #modal1 let-modal>
+      <div class="modal-header">
+          <h4 class="modal-title">Modal title</h4>
+          <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+      </div>
+      <div class="modal-body">
+  
+           <app-salvar-jogo [pontos]="objetoSelecionadoParaEdicao" (retorno)="addOuEditarPontos($event)" ></app-salvar-jogo>
+          
+      </div>
+  
+  </ng-template>
     
