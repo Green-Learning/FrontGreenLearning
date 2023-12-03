@@ -1,1 +1,11 @@
-<p>salasdetails works!</p>
+<form (ngSubmit)="salvar()">
+  <div class="mb-3">
+      <label for="name-input" class="form-label fw-semibold" style="color: #858585'">Nome</label>
+      <input type="text" class="form-control" name="name-input" aria-describedby="emailHelp"
+          [(ngModel)]="sala.nome">
+  </div>
+  <div class="d-flex justify-content-end">
+    <button type="submit" class="btn btn-primary">Salvar</button>
+
+  </div>
+</form>

@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "", redirectTo: "/login", pathMatch: 'full' },
   {
-    path: "", component: IndexComponent, canActivate: [routeGuardGuard], children: [
+    // path: "", component: IndexComponent, canActivate: [routeGuardGuard], children: [
+      path: "", component: IndexComponent, children: [
       { path: "alunos", component: AlunoslistComponent },
       { path: "salas", component: SalaslistComponent },
 

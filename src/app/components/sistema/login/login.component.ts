@@ -26,7 +26,7 @@ export class LoginComponent {
   }
 
   logar() {
-
+    console.log(this.login)
     this.loginService.login(this.login).subscribe({
       next: user => { // QUANDO DÁ CERTO
         if (typeof localStorage !== 'undefined') {
