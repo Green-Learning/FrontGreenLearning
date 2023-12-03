@@ -1,3 +1,4 @@
+
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { Aluno } from '../../../models/aluno';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
@@ -64,5 +65,4 @@ export class AlunoslistComponent {
     
     this.modalRef.close();
   }
-
 }
