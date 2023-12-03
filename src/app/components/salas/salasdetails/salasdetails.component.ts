@@ -2,6 +2,9 @@ import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { Sala } from '../../../models/sala';
 import { SalasService } from '../../../services/salas.service';
 import { Aluno } from '../../../models/aluno';
+import { ProfessorService } from '../../../services/professor.service';
+import { Professor } from '../../../models/professor';
+import { log } from 'console';
 
 @Component({
   selector: 'app-salasdetails',
@@ -14,20 +17,28 @@ export class SalasdetailsComponent {
   @Output() retorno = new EventEmitter<Sala>();
   @Output() retornoAlunos = new EventEmitter<Aluno[]>();
 
-  saborService = inject(SalasService);
+  salaSerive = inject(SalasService);
+  professorService = inject(ProfessorService);
 
   constructor() {
-
-  }
+   
+    const userId = localStorage.getItem('id');
+    console.log(userId);
+}
 
   salvar() {
     //ISSO AQUI SERVE PARA EDITAR OU ADICIONAR... TANTO FAZ
+    const userId = localStorage.getItem('id');
+    const professor: Professor = new Professor();
+    professor.id = Number(userId);
+    this.sala.professor = professor;
 
-    this.saborService.save(this.sala).subscribe({
-      next: produto => { // QUANDO DÁ CERTO
-        this.retorno.emit(produto);
+    this.salaSerive.save(this.sala).subscribe({
+      next: sala => { // QUANDO DÁ CERTO
+        this.retorno.emit(sala);
       },
       error: erro => { // QUANDO DÁ ERRO
+        
         alert('Exemplo de tratamento de erro/exception! Observe o erro no console!');
         console.error(erro);
       }

@@ -8,14 +8,14 @@ import { routeGuardGuard } from './guards/route-guard.guard';
 import { Fase1Component } from './components/jogo/fase1/fase1.component';
 
 const routes: Routes = [
-  { path: "login", component: LoginComponent },
-  { path: "", redirectTo: "/login", pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   {
     // path: "", component: IndexComponent, canActivate: [routeGuardGuard], children: [
-      path: "", component: IndexComponent, children: [
+      path: 'professor', component: IndexComponent, children: [
       // { path: "alunos", component: AlunoslistComponent },
-      { path: "salas", component: SalaslistComponent },
-      {path: "fase1", component: Fase1Component},
+      { path: 'salas', component: SalaslistComponent },
+      {path: 'fase1', component: Fase1Component},
 
     ]
   }

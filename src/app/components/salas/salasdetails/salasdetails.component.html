@@ -1,12 +1,16 @@
 <form (ngSubmit)="salvar()">
   <div class="mb-3">
     <label for="name-input" class="form-label fw-semibold" style="color: #858585">Nome</label>
-    <input type="text" class="form-control" name="name-input"  aria-describedby="emailHelp" [(ngModel)]="sala.nome">
+    <input type="text" class="form-control" name="name-input" aria-describedby="emailHelp" [(ngModel)]="sala.nome">
 
     <app-alunoslist [lista]="sala.alunos"></app-alunoslist>
+
+    <!-- Add an input for professor ID -->
+    <!-- <label for="professor-id-input" class="form-label fw-semibold" style="color: #858585">ID do Professor</label>
+    <input type="text" class="form-control" name="professor-id-input" [(ngModel)]="sala.professor.id"> -->
   </div>
+
   <div class="d-flex justify-content-end">
     <button type="submit" class="btn btn-primary">Salvar</button>
-
   </div>
 </form>

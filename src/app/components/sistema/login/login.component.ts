@@ -31,8 +31,9 @@ export class LoginComponent {
       next: user => { // QUANDO DÁ CERTO
         if (typeof localStorage !== 'undefined') {
           this.loginService.addToken(user.token);
+          this.loginService.addUser(user);
         }
-        this.roteador.navigate(['/salas']);
+        this.roteador.navigate(['/professor/salas']);
       },
       error: erro => { // QUANDO DÁ ERRO
         this.showError = true

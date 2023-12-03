@@ -14,6 +14,7 @@ export class AlunoslistComponent {
   // lista: Aluno[] = [];
 
   @Output() retorno = new EventEmitter<Aluno>();
+  @Output() alunoRetorno = new EventEmitter<Aluno>();
   @Input() modoLancamento: boolean = false;
   @Input() lista: Aluno[] = [];
 
@@ -55,7 +56,7 @@ export class AlunoslistComponent {
   addOuEditar(aluno: Aluno) {
 
     const indice = aluno.id;
-    aluno.id = 0;
+    aluno.id = 1;
 
     if (indice == -1){
       this.lista.push(aluno);

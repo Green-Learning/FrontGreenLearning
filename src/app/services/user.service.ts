@@ -17,26 +17,14 @@ export class UserService {
   login(user: User): Observable<User> {
     return this.http.post<User>(this.API + '/login', user);
   }
-
-
-  // listAll(): Observable<User[]> {
-  //   return this.http.get<User[]>(this.API);
-  // }
-
-  // save(user: User): Observable<User> {
-  //   if (user.id !== undefined){
-  //     return this.http.put<User>(this.API + '/editar/' + user.id, user);
-  //   }
-
-  //   return this.http.post<User>(this.API, user);
-  // }
-
-
-
   // Metodos do token
 
   addToken(token: string) {
     localStorage.setItem('token', token);
+  }
+
+  addUser(professor: User){
+    localStorage.setItem('id', professor.id.toString());
   }
 
   removerToken() {
@@ -47,6 +35,9 @@ export class UserService {
     return localStorage.getItem('token');
   }
 
+  getIdUser(){
+    return localStorage.getItem('id')
+  }
 
   // jwtDecode() {
   //   let token = this.getToken();
