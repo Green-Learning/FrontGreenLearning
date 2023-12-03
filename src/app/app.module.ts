@@ -13,6 +13,9 @@ import { LoginComponent } from './components/sistema/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Fase1Component } from './components/jogo/fase1/fase1.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { CdkDrag,CdkDropList,CdkDropListGroup} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -24,12 +27,18 @@ import { Router } from '@angular/router';
     AlunosdetailsComponent,
     AlunoslistComponent,
     LoginComponent,
+    Fase1Component,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+
+    DragDropModule,
+    CdkDropListGroup,
+    CdkDropList,
+    CdkDrag
   ],
   providers: [
     provideClientHydration()

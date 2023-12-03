@@ -5,6 +5,7 @@ import { LoginComponent } from './components/sistema/login/login.component';
 import { AlunoslistComponent } from './components/alunos/alunoslist/alunoslist.component';
 import { SalaslistComponent } from './components/salas/salaslist/salaslist.component';
 import { routeGuardGuard } from './guards/route-guard.guard';
+import { Fase1Component } from './components/jogo/fase1/fase1.component';
 
 const routes: Routes = [
   { path: "login", component: LoginComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
     path: "", component: IndexComponent, canActivate: [routeGuardGuard], children: [
       { path: "alunos", component: AlunoslistComponent },
       { path: "salas", component: SalaslistComponent },
+      {path: "fase1", component: Fase1Component},
 
     ]
   }
