@@ -19,11 +19,10 @@ export class SalasService {
   }
 
   save(sala: Sala): Observable<Sala> {
+    console.log(JSON.stringify(sala));
     if (sala.id !== undefined){
-      console.log(sala.id + '  edit');
       return this.http.put<Sala>(this.API + '/editar?id=' + sala.id, sala);
     }
-    console.log('save');
 
     return this.http.post<Sala>(this.API, sala);
   }

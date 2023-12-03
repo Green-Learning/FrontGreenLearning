@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { Sala } from '../../../models/sala';
 import { SalasService } from '../../../services/salas.service';
+import { Aluno } from '../../../models/aluno';
 
 @Component({
   selector: 'app-salasdetails',
@@ -11,6 +12,7 @@ export class SalasdetailsComponent {
 
   @Input() sala: Sala = new Sala();
   @Output() retorno = new EventEmitter<Sala>();
+  @Output() retornoAlunos = new EventEmitter<Aluno[]>();
 
   saborService = inject(SalasService);
 

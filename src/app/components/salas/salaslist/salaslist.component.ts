@@ -33,7 +33,6 @@ export class SalaslistComponent {
 
     this.salasService.listAll().subscribe({
       next: lista => { // QUANDO DÁ CERTO
-        console.log(lista)
         this.lista = lista;
 
       },

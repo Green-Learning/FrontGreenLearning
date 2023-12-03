@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     // path: "", component: IndexComponent, canActivate: [routeGuardGuard], children: [
       path: "", component: IndexComponent, children: [
-      { path: "alunos", component: AlunoslistComponent },
+      // { path: "alunos", component: AlunoslistComponent },
       { path: "salas", component: SalaslistComponent },
 
     ]
