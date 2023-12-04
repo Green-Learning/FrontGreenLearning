@@ -1,6 +1,22 @@
-<div class="container">
+<div class="fundo">
+
+  <div style="margin-left: 5%; position: absolute;" class="col-md-2">
+    <h3>Acertos: <b>{{acertos}}</b></h3>
+    <h3>Erros: <b>{{erros}}</b></h3>
+    <h3>Pontuacao: <b>{{pontuacaoTotal}}</b></h3>
+    <!-- <h3>{{mensagemColisao}} </h3> -->
+    <!-- <h3 *ngIf="arrastando">Arrastando! </h3> -->
+
+    <button (click)="avancaFase()" class="btn btn-success mb-2" #botaoProximaFase style="display: none;">Avançar para a Próxima Fase</button>
+      
+    <button type="button" class="btn btn-primary" (click)="adicionar(modal1)">SALVAR</button>
+  </div>
+  
+
+
+<div class="container col-md-9">
       <h3>Arraste os itens <b>Do LIXO</b> para suas Lixeiras:</h3><br>
-      <button (click)="avancaFase()" class="btn btn-success">Avançar para a Próxima Fase</button>
+      
       <div cdkDropListGroup class="row col-lg-12">
 
         <!-- LIXOS FASE 1 -->
@@ -229,15 +245,10 @@
     
       </div>
     <br>
-      <h3>Acertos: <b>{{acertos}}</b></h3>
-      <h3>Erros: <b>{{erros}}</b></h3>
-      <h3>Pontuacao: <b>{{pontuacaoTotal}}</b></h3>
-      <h3>{{mensagemColisao}} </h3>
-      <h3 *ngIf="arrastando">Arrastando! </h3>
-    
-      <button type="button" class="btn btn-primary" (click)="adicionar(modal1)">SALVAR</button>
-
+      
     </div>
+
+  </div>
 
     <ng-template #modal1 let-modal>
       <div class="modal-header">

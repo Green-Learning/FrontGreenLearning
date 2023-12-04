@@ -18,6 +18,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CdkDrag,CdkDropList,CdkDropListGroup} from '@angular/cdk/drag-drop';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SalvarJogoComponent } from './components/jogo/salvar-jogo/salvar-jogo.component';
+import { MenuComponent } from './components/jogo/menu/menu.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { SalvarJogoComponent } from './components/jogo/salvar-jogo/salvar-jogo.c
     LoginComponent,
     Fase1Component,
     SalvarJogoComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ import { AlunoslistComponent } from './components/alunos/alunoslist/alunoslist.c
 import { SalaslistComponent } from './components/salas/salaslist/salaslist.component';
 import { routeGuardGuard } from './guards/route-guard.guard';
 import { Fase1Component } from './components/jogo/fase1/fase1.component';
+import { MenuComponent } from './components/jogo/menu/menu.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
       path: 'professor', component: IndexComponent, children: [
       // { path: "alunos", component: AlunoslistComponent },
       { path: 'salas', component: SalaslistComponent },
+      {path: 'menuJogo', component: MenuComponent},
       {path: 'fase1', component: Fase1Component},
 
     ]

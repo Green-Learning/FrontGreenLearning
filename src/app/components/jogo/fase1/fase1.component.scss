@@ -1,5 +1,15 @@
+.fundo{
+  margin: 0;
+  padding: 0;
+  background-image: url('/assets/jogoimg/background.png'); /* Substitua 'caminho/da/sua/imagem.jpg' pelo caminho real da sua imagem */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 94vh;
+}
+
 .papelLixeira {
-    border: solid 1px #777777 !important;
+    // border: solid 1px #777777 !important;
     border-radius: 4px;
     overflow: hidden;
     display: block;
@@ -12,7 +22,7 @@
   }
 
   .metalLixeira {
-    border: solid 1px #777777 !important;
+    // border: solid 1px #777777 !important;
     border-radius: 4px;
     overflow: hidden;
     display: block;
@@ -25,7 +35,7 @@
   }
 
   .plasticoLixeira {
-    border: solid 1px #777777 !important;
+    // border: solid 1px #777777 !important;
     border-radius: 4px;
     overflow: hidden;
     display: block;
@@ -38,7 +48,7 @@
   }
 
   .organicoLixeira {
-    border: solid 1px #777777 !important;
+    // border: solid 1px #777777 !important;
     border-radius: 4px;
     overflow: hidden;
     display: block;
@@ -51,7 +61,7 @@
   }
 
   .vidroLixeira {
-    border: solid 1px #777777 !important;
+    // border: solid 1px #777777 !important;
     border-radius: 4px;
     overflow: hidden;
     display: block;

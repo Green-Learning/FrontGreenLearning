@@ -4,7 +4,7 @@ import { SalasService } from '../../../services/salas.service';
 import { Aluno } from '../../../models/aluno';
 import { ProfessorService } from '../../../services/professor.service';
 import { Professor } from '../../../models/professor';
-import { log } from 'console';
+
 
 @Component({
   selector: 'app-salasdetails',

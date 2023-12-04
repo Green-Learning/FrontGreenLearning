@@ -4,7 +4,7 @@ import { Elementodearrastar } from '../../../models/jogo/elementodearrastar';
 import { JogoService } from '../../../services/jogo.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Pontos } from '../../../models/jogo/pontos';
-import { EventEmitter } from 'stream';
+
 
 @Component({
   selector: 'app-fase1',
@@ -44,7 +44,6 @@ export class Fase1Component {
   addOuEditarPontos(pontos: Pontos) {
 
     this.listAll();
-
     this.modalRef.dismiss();
 
   }
@@ -60,6 +59,8 @@ export class Fase1Component {
   @ViewChild('fase3LIXEIRAContainer') fase3LIXEIRAContainer!: ElementRef;
   @ViewChild('fase4LIXEIRAContainer') fase4LIXEIRAContainer!: ElementRef;
   @ViewChild('fase5LIXEIRAContainer') fase5LIXEIRAContainer!: ElementRef;
+
+  @ViewChild('botaoProximaFase') botaoProximaFase!: ElementRef;
 
   fase1Lixos: Elementodearrastar[] = [];
   fase2Lixos: Elementodearrastar[] = [];
@@ -142,6 +143,8 @@ export class Fase1Component {
     //vidro
     this.fase5Lixos.push(new Elementodearrastar('assets/jogoimg/vidro/taca.png', 'vidro'));
     this.fase5Lixos.push(new Elementodearrastar('assets/jogoimg/vidro/vinho.png', 'vidro'));
+
+
   }
 
   drop(event: CdkDragDrop<Elementodearrastar[]>) {
@@ -157,8 +160,28 @@ export class Fase1Component {
       //trocou de container
       transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
       this.verificarAcertosEErros(); //tem que ser depois de transferir
+      this.apareceBotaoProximaFase();
     }
 
+  }
+
+  apareceBotaoProximaFase(){
+    if(this.fase1Lixos.length == 0 && this.erros == 0 && this.numeroDaFase == 1){
+      this.botaoProximaFase.nativeElement.style.display = 'block';
+    }
+    else if(this.fase2Lixos.length == 0 && this.erros == 0 && this.numeroDaFase == 2){
+      this.botaoProximaFase.nativeElement.style.display = 'block';
+    }
+    else if(this.fase3Lixos.length == 0 && this.erros == 0 && this.numeroDaFase == 3){
+      this.botaoProximaFase.nativeElement.style.display = 'block';
+    }
+    else if(this.fase4Lixos.length == 0 && this.erros == 0 && this.numeroDaFase == 4){
+      this.botaoProximaFase.nativeElement.style.display = 'block';
+    }
+    else if(this.fase5Lixos.length == 0 && this.erros == 0 && this.numeroDaFase == 5){
+      console.log("MODAL CADASTRAR");
+
+    }
   }
 
   onDragOver(event: any) {
@@ -256,6 +279,7 @@ export class Fase1Component {
 
   avancaFase(){
     this.numeroDaFase++;
+    this.botaoProximaFase.nativeElement.style.display = 'none';
 
     // Esconde as lixeiras e lixos da fase anterior
     switch (this.numeroDaFase) {
