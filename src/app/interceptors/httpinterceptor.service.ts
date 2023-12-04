@@ -1,14 +1,15 @@
-
-
+import { Injectable } from '@angular/core';
 import { HTTP_INTERCEPTORS, HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
-import { Injectable, inject } from '@angular/core';
+import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, catchError, of, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class HttpInterceptorAuthorizationInterceptor implements HttpInterceptor {
+export class HttpinterceptorService implements HttpInterceptor{
+
+  constructor() { }
 
   router = inject(Router);
 
@@ -39,5 +40,7 @@ export class HttpInterceptorAuthorizationInterceptor implements HttpInterceptor 
 }
 
 export const httpInterceptorProviders = [
-  { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorAuthorizationInterceptor, multi: true },
+  { provide: HTTP_INTERCEPTORS, useClass: HttpinterceptorService, multi: true },
 ];
+
+
