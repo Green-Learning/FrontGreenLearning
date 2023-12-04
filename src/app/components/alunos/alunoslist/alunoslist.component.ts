@@ -15,6 +15,7 @@ export class AlunoslistComponent {
 
   @Output() retorno = new EventEmitter<Aluno>();
   @Output() alunoRetorno = new EventEmitter<Aluno>();
+
   @Input() modoLancamento: boolean = false;
   @Input() lista: Aluno[] = [];
 
@@ -30,6 +31,14 @@ export class AlunoslistComponent {
 
   constructor(){
 
+  }
+
+  lancamentoEndereco(aluno : Aluno){
+    this.alunoRetorno.emit(aluno);
+  }
+
+  lancamentoAluno(aluno : Aluno){
+    this.alunoRetorno.emit(aluno);
   }
 
   // Funções da modal
@@ -54,7 +63,7 @@ export class AlunoslistComponent {
   }
 
   addOuEditar(aluno: Aluno) {
-
+ 
     const indice = aluno.id;
     aluno.id = 1;
 

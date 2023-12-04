@@ -8,16 +8,16 @@ import { Observable } from 'rxjs';
 })
 export class JogoService {
 
-  API: string = 'http://localhost:8080/api/pontos';
+  API: string = 'http://localhost:8080/pontos';
   http = inject(HttpClient);
 
   constructor() { }
 
   listAll(): Observable<Pontos[]> {
-    return this.http.get<Pontos[]>(this.API);
+    return this.http.get<Pontos[]>(this.API + `/listar`);
   }
 
   save(pontos: Pontos): Observable<Pontos> {
-    return this.http.post<Pontos>(this.API, pontos);
+    return this.http.post<Pontos>(this.API + `/finalizar`, pontos);
   }
 }

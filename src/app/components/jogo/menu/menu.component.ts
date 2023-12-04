@@ -19,6 +19,6 @@ export class MenuComponent {
   }
 
   jogar(){
-    this.roteador.navigate(['/professor/fase1']);
+    this.roteador.navigate(['#/professor/fase1']);
   }
 }
