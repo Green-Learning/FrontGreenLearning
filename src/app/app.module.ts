@@ -46,7 +46,8 @@ import { SalvarJogoComponent } from './components/jogo/salvar-jogo/salvar-jogo.c
     NgbModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideHttpClient()
   ],
   bootstrap: [AppComponent]
 })

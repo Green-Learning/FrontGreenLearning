@@ -21,7 +21,7 @@ export class SalasdetailsComponent {
   professorService = inject(ProfessorService);
 
   constructor() {
-   
+
     const userId = localStorage.getItem('id');
     console.log(userId);
 }
@@ -33,12 +33,16 @@ export class SalasdetailsComponent {
     professor.id = Number(userId);
     this.sala.professor = professor;
 
+    // this.sala.alunos.forEach(aluno => {
+    //   aluno.sala = this.sala;
+    // });
+
     this.salaSerive.save(this.sala).subscribe({
       next: sala => { // QUANDO DÁ CERTO
         this.retorno.emit(sala);
       },
       error: erro => { // QUANDO DÁ ERRO
-        
+
         alert('Exemplo de tratamento de erro/exception! Observe o erro no console!');
         console.error(erro);
       }

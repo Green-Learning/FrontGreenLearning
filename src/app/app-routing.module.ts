@@ -11,8 +11,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   {
-    // path: "", component: IndexComponent, canActivate: [routeGuardGuard], children: [
-      path: 'professor', component: IndexComponent, children: [
+      path: 'professor', component: IndexComponent, canActivate: [routeGuardGuard], children: [
       // { path: "alunos", component: AlunoslistComponent },
       { path: 'salas', component: SalaslistComponent },
       {path: 'fase1', component: Fase1Component},

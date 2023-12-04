@@ -56,14 +56,20 @@ export class AlunoslistComponent {
   addOuEditar(aluno: Aluno) {
 
     const indice = aluno.id;
-    aluno.id = 1;
+    const nome = aluno.nome;
+    const idade = aluno.idade
+
+    aluno = new Aluno()
+
+    aluno.nome = nome;
+    aluno.idade = idade;
 
     if (indice == -1){
       this.lista.push(aluno);
     } else {
       this.lista[indice] = aluno;
     }
-    
+
     this.modalRef.close();
   }
 }
