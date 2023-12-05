@@ -3,13 +3,18 @@
     <label for="name-input" class="form-label fw-semibold" style="color: #858585">Nome</label>
     <input type="text" class="form-control" name="name-input" aria-describedby="emailHelp" [(ngModel)]="sala.nome">
 
-    <div class="d-flex justify-content-end">
-      <button type="submit" class="btn btn-primary">Salvar</button>
+    <div class="d-flex justify-content-end mt-4 ">
+    <div>
+      <button class="btn btn-outline-primary ms-4 me-2" type="button"  (click)="adicionarAluno(modal1)">Adicionar Aluno</button>
     </div>
+    <div>
+    <button type="submit" class="btn btn-outline-success">SALVAR</button>
   </div>
+  </div>
+</div>
 </form>
 
-<button class="btn btn-primary"   (click)="adicionarAluno(modal1)">Adicionar Aluno</button>
+
 
 <table class="table table-bordered rounded">
   <tbody class="fw-semibold rounded">
@@ -50,8 +55,5 @@
   </div>
   <div class="modal-body">
       <app-alunosdetails [aluno]="alunoSelecionadoParaEdicao"  (retorno)="retornoAluno($event)"></app-alunosdetails>
-  </div>
-  <div class="modal-footer">
-      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
   </div>
 </ng-template>

@@ -7,17 +7,17 @@ import { SalaslistComponent } from './components/salas/salaslist/salaslist.compo
 import { routeGuardGuard } from './guards/route-guard.guard';
 import { Fase1Component } from './components/jogo/fase1/fase1.component';
 import { MenuComponent } from './components/jogo/menu/menu.component';
+import { DashComponent } from './components/dashboard/dash/dash.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   {
-    // path: "", component: IndexComponent, canActivate: [routeGuardGuard], children: [
-      path: 'professor', component: IndexComponent, children: [
-      // { path: "alunos", component: AlunoslistComponent },
-      { path: 'salas', component: SalaslistComponent },
-      {path: 'menuJogo', component: MenuComponent},
-      {path: 'fase1', component: Fase1Component},
+      path: 'professor', component: IndexComponent, canActivate: [routeGuardGuard], children: [
+        { path: 'salas', component: SalaslistComponent },
+        { path: 'dashboard', component: DashComponent },
+        {path: 'menuJogo', component: MenuComponent},
+        {path: 'fase1', component: Fase1Component},
 
     ]
   }
